@@ -28,9 +28,7 @@ pipeline {
         stage('Cleanup') {
             steps {
                 // Remove the workspace directory
-                    deleteDir()
-                }
-                sh 'sleep 10'
+                deleteDir()
                 echo 'Workspace cleanup complete'
             }
         }
