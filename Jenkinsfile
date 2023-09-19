@@ -5,7 +5,7 @@ pipeline {
         stage('Start Printing') {
             steps {
                 echo 'Starting the printing job...'
-                sh sleep 10
+                sleep 10
             }
         }
 
