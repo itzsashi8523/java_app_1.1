@@ -23,12 +23,14 @@ pipeline {
             }
         }
 
-        stage('Cleanup Workspace') {
+        stage('Cleanup') {
             steps {
+                // Remove the workspace directory
                 dir('workspace') {
                     deleteDir()
+                }
+                echo 'Workspace cleanup complete'
             }
-            echo 'Workspace cleanup complete'
         }
     }
 
