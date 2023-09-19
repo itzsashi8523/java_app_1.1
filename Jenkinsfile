@@ -22,6 +22,14 @@ pipeline {
                 echo 'Printing job completed!'
             }
         }
+
+        stage('Cleanup Workspace') {
+            steps {
+                dir('workspace') {
+                    deleteDir()
+            }
+            echo 'Workspace cleanup complete'
+        }
     }
 
     post {
