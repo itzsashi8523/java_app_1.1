@@ -5,6 +5,7 @@ pipeline {
         stage('Start Printing') {
             steps {
                 echo 'Starting the printing job...'
+                sh 'sleep 10'
             }
         }
 
@@ -13,22 +14,23 @@ pipeline {
                 // Add your printing commands or scripts here
                 // For example, you can use shell commands to simulate the printing process
                 sh 'echo "Printing in progress..."'
-                sh 'sleep 5' // Simulate a 5-second printing job
+                sh 'sleep 10' // Simulate a 5-second printing job
             }
         }
 
         stage('Job Completed') {
             steps {
                 echo 'Printing job completed!'
+                sh 'sleep 20'
             }
         }
 
         stage('Cleanup') {
             steps {
                 // Remove the workspace directory
-                dir('workspace') {
                     deleteDir()
                 }
+                sh 'sleep 10'
                 echo 'Workspace cleanup complete'
             }
         }
