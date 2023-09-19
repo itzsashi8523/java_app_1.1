@@ -14,14 +14,14 @@ pipeline {
                 // Add your printing commands or scripts here
                 // For example, you can use shell commands to simulate the printing process
                 sh 'echo "Printing in progress..."'
-                sh 'sleep 10' // Simulate a 5-second printing job
+                sleep 10
             }
         }
 
         stage('Job Completed') {
             steps {
                 echo 'Printing job completed!'
-                sh 'sleep 20'
+                sleep 20
             }
         }
 
